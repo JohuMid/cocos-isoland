@@ -19,3 +19,12 @@ export enum ItemTypeEnum {
 export enum EventEnum {
     Render = "Render",
 }
+
+export enum TriggerTypeEnum {
+    MailBox = "MailBox",
+}
+
+export enum TriggerStatusEnum {
+    Pengind = "Pengind",
+    Resolved = "Resolved",
+}

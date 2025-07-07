@@ -1,5 +1,5 @@
 import Singleton from "../Base/Singleton"
-import { EventEnum, ItemStatusEnum, ItemTypeEnum } from "../Enum"
+import { EventEnum, ItemStatusEnum, ItemTypeEnum, TriggerStatusEnum } from "../Enum"
 import EventManager from "./EventManager"
 
 interface IItem {
@@ -21,10 +21,20 @@ export default class DataManager extends Singleton {
         },
         {
             type: ItemTypeEnum.Mail,
-            status: ItemStatusEnum.Inventory
+            status: ItemStatusEnum.Disable
         }]
 
     private _isSelect = false
+    private _mailboxStatus:TriggerStatusEnum = TriggerStatusEnum.Pengind
+
+    get mailboxStatus() {
+        return this._mailboxStatus
+    }
+
+    set mailboxStatus(newData:TriggerStatusEnum) {
+        this._mailboxStatus = newData
+        this.render()
+    }
 
     get isSelect() {
         return this._isSelect

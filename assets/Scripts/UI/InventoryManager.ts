@@ -1,4 +1,4 @@
-import { _decorator, Button, Component, director, instantiate, Label, Node, Prefab } from 'cc';
+import { _decorator, Button, Component, director, instantiate, Label, log, Node, Prefab } from 'cc';
 import { RenderManager } from '../Base/RenderManager';
 import DataManager from '../Runtime/DataManager';
 import { ItemStatusEnum, ItemTypeEnum } from '../Enum';

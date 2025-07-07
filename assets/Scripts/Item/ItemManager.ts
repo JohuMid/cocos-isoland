@@ -28,7 +28,7 @@ export class ItemManager extends RenderManager {
 
     render(): void {
         const status = DataManager.Instance.items.find((item) => item.type === this.type)?.status
-        const spriteComponent = this.node?.getComponent(Sprite)
+        const spriteComponent = this.node.getComponent(Sprite)
         switch (status) {
             case ItemStatusEnum.Scene:
                 this.node.active = true
