@@ -21,7 +21,7 @@ export default class DataManager extends Singleton {
         },
         {
             type: ItemTypeEnum.Mail,
-            status: ItemStatusEnum.Scene
+            status: ItemStatusEnum.Inventory
         }]
 
     private _isSelect = false
