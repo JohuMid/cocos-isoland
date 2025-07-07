@@ -3,8 +3,8 @@ import { ItemManager } from './ItemManager';
 import { ItemTypeEnum } from '../Enum';
 const { ccclass, property } = _decorator;
 
-@ccclass('NewComponent')
-export class NewComponent extends ItemManager {
+@ccclass('MailItemManager')
+export class MailItemManager extends ItemManager {
     label = "船票"
     type: ItemTypeEnum = ItemTypeEnum.Mail
 }

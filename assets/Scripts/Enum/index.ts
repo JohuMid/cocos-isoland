@@ -5,13 +5,17 @@ export enum SceneEnum {
     H4 = "H4",
 }
 
-export enum ItemStatusEnum{
-    Scene ="Scene",
-    Inventory="Inventory",
-    Disable="Disable"
+export enum ItemStatusEnum {
+    Scene = "Scene",
+    Inventory = "Inventory",
+    Disable = "Disable"
 }
 
-export enum ItemTypeEnum{
-    Key="key",
-    Mail="mail"
+export enum ItemTypeEnum {
+    Key = "Key",
+    Mail = "Mail"
+}
+
+export enum EventEnum {
+    Render = "Render",
 }
