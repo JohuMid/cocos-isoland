@@ -12,6 +12,8 @@ export default class DataManager extends Singleton {
         return super.GetInstance<DataManager>()
     }
 
+    private _curItemType: ItemTypeEnum | null = null
+
     private _items: Array<IItem> = [
         {
             type: ItemTypeEnum.Key,
@@ -22,13 +24,36 @@ export default class DataManager extends Singleton {
             status: ItemStatusEnum.Scene
         }]
 
+    private _isSelect = false
+
+    get isSelect() {
+        return this._isSelect
+    }
+
+    set isSelect(newData:boolean){
+        this._isSelect = newData
+        this.render()
+    }
+
+    get curItemType() {
+        return this._curItemType
+    }
+
+    set curItemType(newData) {
+        this._curItemType = newData
+        this.render()
+    }
+
     get items() {
         return this._items
     }
 
     set items(newData) {
         this._items = newData
+        this.render()
+    }
 
+    render() {
         // 触发渲染
         EventManager.Instance.emit(EventEnum.Render)
     }
