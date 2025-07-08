@@ -5,6 +5,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('KeyItemManager')
 export class KeyItemManager extends ItemManager {
+    protected onLoad(): void { }
     label = "信箱钥匙"
     type: ItemTypeEnum = ItemTypeEnum.Key
 }

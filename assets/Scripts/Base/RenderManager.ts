@@ -4,20 +4,21 @@ import { EventEnum } from '../Enum';
 
 const { ccclass, property } = _decorator;
 
+
 @ccclass('RenderManager')
 export abstract class RenderManager extends Component {
-
-    protected onLoad(): void {
+    onLoad() {
         EventManager.Instance.on(EventEnum.Render, this.render, this)
     }
 
-    protected onDestroy(): void {
-        EventManager.Instance.off(EventEnum.Render, this.render)
+    onDestroy() {
+        EventManager.Instance.off(EventEnum.Render, this.render, this)
     }
 
-    protected start(): void {
+    start() {
         this.render()
     }
 
     abstract render(): void
 }
+

@@ -8,9 +8,7 @@ const { ccclass, property } = _decorator;
 export abstract class TriggerManager extends RenderManager {
     type: TriggerTypeEnum;
 
-    render(): void {
-        
-    }
+    render() {}
 
     abstract handleTrigger():void
 

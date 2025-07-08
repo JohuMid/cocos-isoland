@@ -8,7 +8,7 @@ export enum SceneEnum {
 export enum ItemStatusEnum {
     Scene = "Scene",
     Inventory = "Inventory",
-    Disable = "Disable"
+    Disabled = "Disabled"
 }
 
 export enum ItemTypeEnum {

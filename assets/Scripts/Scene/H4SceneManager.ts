@@ -12,7 +12,7 @@ export class H4SceneManager extends SceneManager {
     @property(Node)
     mailPlaceholder: Node = null
 
-    render(): void {
+    render() {
         super.render()
         this.items.destroyAllChildren()
 

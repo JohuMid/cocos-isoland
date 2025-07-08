@@ -12,12 +12,12 @@ export class H2SceneManager extends SceneManager {
     @property(Node)
     keyPlaceholder: Node = null
 
-    render(): void {
+    render() {
         super.render()
         this.items.destroyAllChildren()
 
-        const key = DataManager.Instance.items.find(i=>i.type===ItemTypeEnum.Key)
-        if (key && key.status === ItemStatusEnum.Scene) {
+        const key = DataManager.Instance.items.find(i => i.type === ItemTypeEnum.Key)
+        if (key && key.status === ItemStatusEnum.Scene) { // 如果钥匙的状态是在场景中，就渲染到 keyPlaceholder 的位置上
             const keyNode = instantiate(this.keyPrefab)
             this.items.addChild(keyNode)
             keyNode.setPosition(this.keyPlaceholder.position)

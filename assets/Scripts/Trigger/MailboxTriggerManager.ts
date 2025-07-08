@@ -22,12 +22,14 @@ export class MailboxTriggerManager extends TriggerManager {
         this.openNode.active = open
     }
 
-    handleTrigger(){
+    handleTrigger() {
+        console.log('handleTrigger' );
+        
         if (DataManager.Instance.curItemType === ItemTypeEnum.Key && DataManager.Instance.isSelect) {
             DataManager.Instance.curItemType = null
             DataManager.Instance.isSelect = false
-            DataManager.Instance.items.find(i=>i.type===ItemTypeEnum.Key).status = ItemStatusEnum.Disable
-            DataManager.Instance.items.find(i=>i.type===ItemTypeEnum.Mail).status = ItemStatusEnum.Scene
+            DataManager.Instance.items.find(i => i.type === ItemTypeEnum.Key).status = ItemStatusEnum.Disabled
+            DataManager.Instance.items.find(i => i.type === ItemTypeEnum.Mail).status = ItemStatusEnum.Scene
             DataManager.Instance.items = [...DataManager.Instance.items]
             DataManager.Instance.mailboxStatus = TriggerStatusEnum.Resolved
         }
