@@ -12,6 +12,19 @@ export default class DataManager extends Singleton {
         return super.GetInstance<DataManager>()
     }
 
+    readonly H2AAnswer = [0, 1, 2, 3, 4, 5, null]
+    readonly H2AInitData = [1, 0, 3, 2, 5, 4, null]
+    private _H2AData = this.H2AInitData
+
+    get H2AData() {
+        return this._H2AData
+    }
+
+    set H2AData(newData: number[]) {
+        this._H2AData = newData
+        this.render()
+    }
+
     private _curItemType: ItemTypeEnum | null = null
 
     private _items: Array<IItem> = [
@@ -25,15 +38,15 @@ export default class DataManager extends Singleton {
         }]
 
     private _isSelect = false
-    private _mailboxStatus:TriggerStatusEnum = TriggerStatusEnum.Pengind
-    private _grandmaStatus:TriggerStatusEnum = TriggerStatusEnum.Pengind
+    private _mailboxStatus: TriggerStatusEnum = TriggerStatusEnum.Pengind
+    private _grandmaStatus: TriggerStatusEnum = TriggerStatusEnum.Pengind
     private _grandmaDialogIndex = -1
 
     get mailboxStatus() {
         return this._mailboxStatus
     }
 
-    set mailboxStatus(newData:TriggerStatusEnum) {
+    set mailboxStatus(newData: TriggerStatusEnum) {
         this._mailboxStatus = newData
         this.render()
     }
@@ -51,7 +64,7 @@ export default class DataManager extends Singleton {
         return this._grandmaDialogIndex
     }
 
-    set grandmaDialogIndex(newData:number) {
+    set grandmaDialogIndex(newData: number) {
         this._grandmaDialogIndex = newData
         this.render()
     }
@@ -60,7 +73,7 @@ export default class DataManager extends Singleton {
         return this._isSelect
     }
 
-    set isSelect(newData:boolean){
+    set isSelect(newData: boolean) {
         this._isSelect = newData
         this.render()
     }
