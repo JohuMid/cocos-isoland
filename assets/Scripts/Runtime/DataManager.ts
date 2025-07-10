@@ -21,11 +21,13 @@ export default class DataManager extends Singleton {
         },
         {
             type: ItemTypeEnum.Mail,
-            status: ItemStatusEnum.Disable
+            status: ItemStatusEnum.Disabled
         }]
 
     private _isSelect = false
     private _mailboxStatus:TriggerStatusEnum = TriggerStatusEnum.Pengind
+    private _grandmaStatus:TriggerStatusEnum = TriggerStatusEnum.Pengind
+    private _grandmaDialogIndex = -1
 
     get mailboxStatus() {
         return this._mailboxStatus
@@ -33,6 +35,24 @@ export default class DataManager extends Singleton {
 
     set mailboxStatus(newData:TriggerStatusEnum) {
         this._mailboxStatus = newData
+        this.render()
+    }
+
+    get grandmaStatus() {
+        return this._grandmaStatus
+    }
+
+    set grandmaStatus(newData: TriggerStatusEnum) {
+        this._grandmaStatus = newData
+        this.render()
+    }
+
+    get grandmaDialogIndex() {
+        return this._grandmaDialogIndex
+    }
+
+    set grandmaDialogIndex(newData:number) {
+        this._grandmaDialogIndex = newData
         this.render()
     }
 

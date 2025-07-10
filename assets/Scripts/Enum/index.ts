@@ -22,6 +22,7 @@ export enum EventEnum {
 
 export enum TriggerTypeEnum {
     MailBox = "MailBox",
+    Grandma = "Grandma",
 }
 
 export enum TriggerStatusEnum {
