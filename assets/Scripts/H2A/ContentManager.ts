@@ -17,10 +17,6 @@ export class ContentManager extends RenderManager {
     render() {
         const curIndex = DataManager.Instance.H2AData.findIndex(i => i === this.index)
         const answerIndex = DataManager.Instance.H2AAnswer.findIndex(i => i === this.index)
-
-        console.log('curIndex,answerIndex', curIndex,answerIndex);
-        
-
         this.getComponent(Sprite).spriteFrame = (curIndex === answerIndex ? this.successSF : this.normalSF)
     }
 }

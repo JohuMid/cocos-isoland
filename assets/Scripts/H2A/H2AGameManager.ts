@@ -1,7 +1,8 @@
-import { _decorator, Component, instantiate, Node, Prefab, UITransform } from 'cc';
+import { _decorator, Component, director, instantiate, Node, Prefab, UITransform } from 'cc';
 import { CircleManager } from './CircleManager';
 import { RenderManager } from '../Base/RenderManager';
 import DataManager from '../Runtime/DataManager';
+import { SceneEnum, TriggerStatusEnum } from '../Enum';
 const { ccclass, property } = _decorator;
 
 const CIRCLE_RADIUS = 80
@@ -27,6 +28,7 @@ export class H2AGameManager extends RenderManager {
         this.generateLines()
 
         super.start()
+        this.checkSuccess()
     }
 
     render() {
@@ -45,7 +47,9 @@ export class H2AGameManager extends RenderManager {
     }
 
     handleCircleTouth(e: Event, _index: string) {
-        // BUG 点击没有到空余的位置上去
+        if (DataManager.Instance.doorStatus === TriggerStatusEnum.Resolved) {
+            return
+        }
         const index = parseInt(_index)
         const curCircleContentIndex = DataManager.Instance.H2AData[index]
         if (curCircleContentIndex === null) {
@@ -64,6 +68,19 @@ export class H2AGameManager extends RenderManager {
                 DataManager.Instance.H2AData = [...DataManager.Instance.H2AData]
             }
         }
+
+        this.checkSuccess()
+    }
+
+    checkSuccess() {
+        if (DataManager.Instance.H2AData.every((e, i) => DataManager.Instance.H2AAnswer[i] === e)) {
+            DataManager.Instance.doorStatus = TriggerStatusEnum.Resolved
+            director.loadScene(SceneEnum.H2)
+        }
+    }
+
+    resetContent() {
+        DataManager.Instance.H2AData = [...DataManager.Instance.H2AInitData]
     }
 
     generateCircleMap() {
