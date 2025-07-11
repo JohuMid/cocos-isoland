@@ -19,9 +19,9 @@ export class DoorTriggerManager extends TriggerManager {
         console.log('handleTrigger');
 
         if (DataManager.Instance.doorStatus === TriggerStatusEnum.Pengind) {
-            director.loadScene(SceneEnum.H2A)
+            DataManager.Instance.curScene = SceneEnum.H2A
         } else {
-            director.loadScene(SceneEnum.H3)
+            DataManager.Instance.curScene = SceneEnum.H3
         }
     }
 

@@ -740,7 +740,14 @@
     "_enabled": true,
     "__prefab": null,
     "items": null,
-    "inventoryItemPrefab": null,
+    "inventoryItemPrefab": {
+      "__uuid__": "1b35b015-b999-4db9-8cb2-b59120bef3b0",
+      "__expectedType__": "cc.Prefab"
+    },
+    "menu": {
+      "__uuid__": "998f53d1-7005-4c25-a8de-e5800511cbff",
+      "__expectedType__": "cc.Prefab"
+    },
     "_id": "97ctPs7FZP+aNQ0/pI4Htl"
   },
   {

@@ -75,7 +75,7 @@ export class H2AGameManager extends RenderManager {
     checkSuccess() {
         if (DataManager.Instance.H2AData.every((e, i) => DataManager.Instance.H2AAnswer[i] === e)) {
             DataManager.Instance.doorStatus = TriggerStatusEnum.Resolved
-            director.loadScene(SceneEnum.H2)
+            DataManager.Instance.curScene = SceneEnum.H2
         }
     }
 

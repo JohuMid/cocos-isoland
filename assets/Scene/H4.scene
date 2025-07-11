@@ -1335,6 +1335,10 @@
       "__uuid__": "1b35b015-b999-4db9-8cb2-b59120bef3b0",
       "__expectedType__": "cc.Prefab"
     },
+    "menu": {
+      "__uuid__": "998f53d1-7005-4c25-a8de-e5800511cbff",
+      "__expectedType__": "cc.Prefab"
+    },
     "mailPrefab": {
       "__uuid__": "a1329ae3-03b4-4be7-b104-999e1c10562d",
       "__expectedType__": "cc.Prefab"
